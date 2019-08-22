@@ -1,0 +1,28 @@
+
+
+Obtained from render_list -h (the manual page is devoid of content).
+
+Usage: render_list [OPTION] ...
+
+-a, --all	render all tiles in given zoom level range instead of reading from STDIN
+-f, --force	render tiles even if they seem current
+-m, --map=MAP	render tiles in this map style (defaults to 'default')
+-l, --max-load=LOAD	sleep if load is this high (defaults to 16)
+-s, --socket=SOCKET	unix domain socket name for contacting renderd
+-n, --num-threads=N	the number of parallel request threads, and consequently the number of parallel rendering threads (default 1)
+-t, --tile-dir	tile cache directory (defaults to '/var/lib/mod_tile'). Has to be consistent with what renderd uses, as it is used (only) for checking if up-to-date tiles exist.
+-z, --min-zoom=ZOOM	filter input to only render tiles greater or equal to this zoom level (default is 0)
+-Z, --max-zoom=ZOOM	filter input to only render tiles less than or equal to this zoom level (default is 20)
+If you are using --all, and -z and -Z with the same argument, you can restrict the tile range by adding these options:
+
+-x, --min-x=X	minimum X tile coordinate
+-X, --max-x=X	maximum X tile coordinate
+-y, --min-y=Y	minimum Y tile coordinate
+-Y, --max-y=Y	maximum Y tile coordinate
+Without --all, send a list of tiles to be rendered from STDIN in the format: X Y Z, e.g.
+
+0	0	1
+0	1	1
+1	0	1
+1	1	1
+The above would cause all 4 tiles at zoom 1 to be rendered.
