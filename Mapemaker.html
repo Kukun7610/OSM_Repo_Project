@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <title>OpenStreetMap India Mapbox GL Map</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <!--     Mapbox GL JS -->
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.51.0/mapbox-gl.css' rel='stylesheet' />
+    
+    <style>
+      html,
+      body {
+        height: 100%;
+      }
+
+      #map {
+        width: 100%;
+        height: 100%;
+      }
+
+    </style>
+  </head>
+
+  <body>
+
+    <div id='map'></div>
+
+    <script>
+      // Initialize GL map
+      var map = new mapboxgl.Map({
+        container: 'map',
+        style: 'https://cdn.jsdelivr.net/gh/osm-in/mapbox-gl-styles@master/osm-mapnik-india-v8.json'
+      });
+      
+    </script>
+
+
+  </body>
+
+</html>
